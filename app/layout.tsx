@@ -28,11 +28,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${notoSansJP.variable} font-[family-name:var(--font-noto-sans-jp)] antialiased text-gray-800 bg-white`}
+        className={`${notoSansJP.variable} font-[family-name:var(--font-noto-sans-jp)] antialiased text-[var(--foreground)] bg-[var(--background)]`}
       >
-        <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+        <header className="sticky top-0 z-50 bg-[var(--background)]/90 backdrop-blur border-b border-[var(--border)]">
           <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-gray-900">
+            <Link href="/" className="text-xl font-bold text-[var(--foreground)]">
               サイト名
             </Link>
             <nav className="hidden md:flex gap-6">
@@ -40,7 +40,7 @@ export default function RootLayout({
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -51,8 +51,8 @@ export default function RootLayout({
 
         <main className="min-h-screen">{children}</main>
 
-        <footer className="bg-gray-50 border-t border-gray-100">
-          <div className="max-w-5xl mx-auto px-4 py-8 text-center text-sm text-gray-500">
+        <footer className="bg-[var(--muted)] border-t border-[var(--border)]">
+          <div className="max-w-5xl mx-auto px-4 py-8 text-center text-sm text-[var(--muted-foreground)]">
             <p>&copy; 2026 サイト名. All rights reserved.</p>
           </div>
         </footer>
